@@ -13,6 +13,8 @@ const App = () => {
     phoneNumber: ''
   });
 
+ const [error, setError] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -20,10 +22,13 @@ const App = () => {
       [name]: value
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    // Check if passwords match
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      return;
+   }    
     // Add your registration logic here (e.g., API request)
     try {
       // Replace the following with your actual API endpoint
