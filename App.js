@@ -5,7 +5,7 @@ import RegistrationForm from './RegistrationForm';
 const App = () => {
   return (
     <div>
-      <RegistrationForm />
+      <Registration-Form />
     </div>
   );
 };
